@@ -121,8 +121,16 @@ exports.authenticated = function(req, res, next) {
 */
 exports.middleware = function(config) {
   if(config) {
-    for(var c in config);
-    configuration[c] = config[c];
+    for(var c in config) {
+      if(c !== 'providers') {
+        configuration[c] = config[c];
+      }
+      else {
+        for(var provider in config['providers']) {
+          authProviders[provider].configure(config['providers'][provider]);
+        }
+      }
+    }
   }
 
   return function(req, res, next) {
