@@ -1,12 +1,23 @@
 {
   "name": "relmeauth",
-  "version": "0.0.0",
-  "description": "a rel=me auth implementation in node.js",
+  "version": "0.0.1",
+  "description": "A rel=me auth middleware implementation in node.js. Works with any connect-type web application",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": "middleware, auth, connect"
   "repository": "",
-  "author": "",
+  "dependencies": {
+    "request": "*",
+    "connect": "*",
+    "cheerio": "*",
+    "oauth": "*",
+    "underscore": "*"
+  },
+  "author": {
+    "name": "julien Genestoux",
+    "url": "http://ouvre-boite.com"
+  }
   "license": "BSD"
 }
