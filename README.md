@@ -34,6 +34,10 @@ app.use(relme.middleware({
     'google.com': {
       id: 'xxxxx',
       secret: 'yyyyy'
+    },
+    'github.com': {
+      id: 'xxxxx',
+      secret: 'yyyyy'
     }
   }
 }));
