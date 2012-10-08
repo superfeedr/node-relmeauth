@@ -50,7 +50,7 @@ app.listen(8080)
 
 Current providers include: [OStatus](http://status.net) sites, [Twitter](http://twitter.com), [Google](http://plus.google.com), [Github](http://github.com). If you want to support IndieAuth, make sure you support OAuth2, provide `rel=me` links on your profiles pages.
 
-Test it in on ...
+Test it in on this [site](http://hellorelmeauth.jit.su/private).
 
 Customization
 -------------
