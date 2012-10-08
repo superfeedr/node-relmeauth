@@ -13,25 +13,25 @@ It requires that you use the bodyParser middleware, the cookieParser middleware 
 Example/Usage
 -------------
 
-<code>
-  var express = require('express');
-  var relme = require('./index.js');
+```javascript
+var express = require('express');
+var relme = require('./index.js');
 
-  var app = express();
-  app.use(express.bodyParser());
-  app.use(express.cookieParser());
-  app.use(express.session({
-    secret: "A secret for the Sessions encryption"
-  }));
-  app.use(relme.middleware({})); // {} is for options. See below.
+var app = express();
+app.use(express.bodyParser());
+app.use(express.cookieParser());
+app.use(express.session({
+  secret: "A secret for the Sessions encryption"
+}));
+app.use(relme.middleware({})); // {} is for options. See below.
 
-  // Protect private resources like this.
-  app.get('/private', relme.authenticated ,function(req, res){
-    res.end('This is a scret that you can now only if you're authentified.');
-  });
+// Protect private resources like this.
+app.get('/private', relme.authenticated ,function(req, res){
+  res.end('This is a scret that you can now only if you're authentified.');
+});
 
-  app.listen(8080)
-</code>
+app.listen(8080)
+````
 
 
 Current providers include: [OStatus](http://status.net) sites, [Twitter](http://twitter.com), [Google](http://plus.google.com), [Github](http://github.com). If you want to support IndieAuth, make sure you support OAuth2, provide `rel=me` links on your profiles pages.
@@ -49,7 +49,7 @@ url provided' name must be `me`.
 
 Example:
 
-<code>
+```javascript
 app.use(relme.middleware({
   prefix: 'auth',
   authPage = function(req, res, next) {
@@ -59,8 +59,7 @@ app.use(relme.middleware({
     // Render whatever makes sense to render on the authErrorPage
   }
 }));
-</code>
-
+  ``
 
 Thank you
 ---------
