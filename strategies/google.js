@@ -30,7 +30,6 @@ exports.getUserUrl = function(base, authCode, cb) {
 }
 
 exports.getRedirectUrl = function(base) {
-  var getRequestTokenUrl = "https://accounts.google.com/o/oauth2/auth?";
   var params = {
     response_type: 'code',
     access_type: 'offline',

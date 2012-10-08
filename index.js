@@ -4,9 +4,11 @@ var request = require('request');
 var cheerio = require('cheerio');
 var _ = require('underscore');
 var google = require('./strategies/google.js');
+var github = require('./strategies/github.js');
 
 var authProviders = {};
 authProviders[google.domain] = google;
+authProviders[github.domain] = github;
 
 var configuration = {
   prefix: 'relmeauth',
@@ -127,7 +129,9 @@ exports.middleware = function(config) {
       }
       else {
         for(var provider in config['providers']) {
-          authProviders[provider].configure(config['providers'][provider]);
+          if(authProviders[provider]) {
+            authProviders[provider].configure(config['providers'][provider]);
+          }
         }
       }
     }
