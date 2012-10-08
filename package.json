@@ -9,11 +9,11 @@
   "keywords": "middleware, auth, connect",
   "repository": "",
   "dependencies": {
-    "request": "*",
-    "connect": "*",
-    "cheerio": "*",
-    "oauth": "*",
-    "underscore": "*"
+    "request": ">=2.11.4",
+    "connect": ">=2.5.0",
+    "cheerio": ">=0.10.1",
+    "oauth": ">=0.9.8",
+    "underscore": ">=1.4.2"
   },
   "author": {
     "name": "julien Genestoux",
