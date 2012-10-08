@@ -28,14 +28,14 @@ app.use(express.cookieParser());
 app.use(express.session({
   secret: "A secret for the Sessions encryption"
 }));
-app.use(relme.middleware({})); // {} is for options. See below.
+app.use(relme.middleware({root: 'http://127.0.0.1:8080'}));
 
-// Protect private resources like this.
 app.get('/private', relme.authenticated ,function(req, res){
-  res.end('This is a scret that you can now only if you're authentified.');
+  res.end('This is a scret that you can now only if youre authentified.');
 });
 
 app.listen(8080)
+
 ```
 
 Current providers include: [OStatus](http://status.net) sites, [Twitter](http://twitter.com), [Google](http://plus.google.com), [Github](http://github.com). If you want to support IndieAuth, make sure you support OAuth2, provide `rel=me` links on your profiles pages.
@@ -56,6 +56,7 @@ Example:
 ```javascript
 app.use(relme.middleware({
   prefix: 'auth',
+  root: 'http://127.0.0.1:8080',
   authPage = function(req, res, next) {
     // Render whatever makes sense to render on the authPage. You can also redirect... etc.
   }
